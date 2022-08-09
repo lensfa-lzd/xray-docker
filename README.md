@@ -1,4 +1,6 @@
-##
+## xray docker build file
+直接修改config文件，再编译可以省去后续挂载文件夹，方便云函数部署。
+
 Fork from Teddysun [https://github.com/teddysun/across/tree/master/docker/xray]
 
 [Xray][1] is a platform for building proxies to bypass network restrictions.
