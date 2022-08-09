@@ -1,4 +1,5 @@
-## Xray Docker Image by Teddysun
+##
+Fork from Teddysun [https://github.com/teddysun/across/tree/master/docker/xray]
 
 [Xray][1] is a platform for building proxies to bypass network restrictions.
 
