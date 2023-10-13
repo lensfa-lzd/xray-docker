@@ -1,0 +1,20 @@
+FROM debian:latest
+
+EXPOSE 8888
+WORKDIR /root
+COPY xray /usr/bin/xray
+COPY geoip.dat /usr/share/xray/geoip.dat
+COPY geosite.dat /usr/share/xray/geosite.dat
+COPY xray_server_config_template.json /etc/xray/config.json
+
+RUN apt-get update \
+	&& apt-get install tzdata ca-certificates -y \
+    && apt-get autoremove \
+	&& mkdir -p /var/log/xray \
+	&& chmod +x /usr/bin/xray \
+    && rm -rf /usr/share/doc \
+    && rm -rf /usr/share/locale
+
+VOLUME /etc/xray
+ENV TZ=Asia/Shanghai
+CMD [ "/usr/bin/xray", "-config", "/etc/xray/config.json" ]

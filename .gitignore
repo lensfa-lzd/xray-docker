@@ -1,0 +1,7 @@
+.idea
+
+geoip.dat
+geosite.dat
+xray
+
+xray_server_config_template.json
